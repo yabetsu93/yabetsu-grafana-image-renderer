@@ -1,0 +1,21 @@
+{
+  "rendering": {
+    "mode": "clustered",
+    "clustering": {
+      "mode": "browser",
+      "maxConcurrency": 10,
+      "timeout": 30
+    },
+    "verboseLogging": "false",
+    "dumpio": false,
+    "timingMetrics": false,
+    "args": ["--no-sandbox", "--disable-gpu"]
+  },
+  "logging": {
+    "level": "info",
+    "console": {
+      "json": true,
+      "colorize": false
+    }
+  }
+}
