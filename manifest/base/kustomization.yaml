@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - resources/configmaps.yaml
+  - resources/deployment.yaml
+  - resources/namespace.yaml
+  - resources/service.yaml
+
+commonLabels:
+  project: yabetsu-project
+  type: grafana-image-renderer
+
+namespace: grafana-qa
+
+configMapGenerator:
+  - name: grafana-image-renderer-envs
+    files:
+      - config/config.json

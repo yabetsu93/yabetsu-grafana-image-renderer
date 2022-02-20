@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  grafana-image-renderer-service
+spec:
+  selector:
+    app:  grafana-image-renderer
+  type:  LoadBalancer
+  ports:
+  - name:  http
+    port:  80
+    targetPort:  8080

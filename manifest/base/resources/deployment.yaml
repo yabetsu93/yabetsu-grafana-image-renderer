@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  grafana-image-renderer
+  labels:
+    name:  grafana-image-renderer
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        name:  grafana-image-renderer
+    spec:
+      containers:
+      - image:  grafana-image-renderer
+        name:  grafana/grafana-image-renderer:latest
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "950m"
+          limits:
+            memory: "800Mi"
+            cpu: "600m"   
+        ports:
+        - name:  grafana-image-renderer-port
+          containerPort:  8081
+      restartPolicy: Always
+      imagePullPolicy: Always
